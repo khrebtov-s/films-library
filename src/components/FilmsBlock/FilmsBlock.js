@@ -1,7 +1,6 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 import filmsData from "../../films";
-import StarRating from "../StarRating";
 import "./FilmsBlock.css";
 
 const FilmsBlock = ({ search }) => {
