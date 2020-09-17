@@ -4,6 +4,11 @@ import "./Header.css";
 const Header = ({ setSearchQuery }) => {
   const [search, setSearch] = React.useState("");
 
+  document.onkeyup = (e) => {
+    e = e || window.event;
+    if (e.keyCode === 13) setSearchQuery(search);
+  };
+
   return (
     <div className="header">
       <input
@@ -18,10 +23,6 @@ const Header = ({ setSearchQuery }) => {
         type="submit"
         onClick={() => {
           setSearchQuery(search);
-          window.focus();
-          if (document.activeElement) {
-            document.activeElement.blur();
-          }
         }}
       >
         Result
