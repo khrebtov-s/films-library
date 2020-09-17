@@ -7,10 +7,8 @@ const FilmsBlock = ({ search }) => {
   let films = [];
 
   if (search.length) {
-    films = filmsData.filter(function (v, i) {
-      if (v.title.toLowerCase().indexOf(search.toLowerCase()) >= 0) {
-        return true;
-      }
+    films = filmsData.filter((film, i) => {
+      return film.title.toLowerCase().indexOf(search.toLowerCase()) >= 0;
     });
   } else {
     films = filmsData;
@@ -26,14 +24,14 @@ const FilmsBlock = ({ search }) => {
       <ul>
         {genres.map((genre, index) => {
           return (
-            <li key={index}>
+            <li key={`genre-${index}`}>
               <div>
                 <h1>{`${genre} (${countFilmsOfGenre(genre)})`}</h1>
                 <ul>
                   {films.map((film, index) => {
                     if (film.genre === genre) {
                       return (
-                        <li key={index} className="films-block_film">
+                        <li key={`film-${index}`} className="films-block_film">
                           <StarRating countStar={film.rating} />
                           <a href={film.link}>{film.title}</a>
                         </li>
