@@ -8,10 +8,7 @@ const FilmsBlock = ({ search }) => {
 
   if (search.length) {
     films = filmsData.filter(function (v, i) {
-      if (
-        v.title.toLowerCase().indexOf(search) >= 0 ||
-        v.title.toUpperCase().indexOf(search) >= 0
-      ) {
+      if (v.title.toLowerCase().indexOf(search.toLowerCase()) >= 0) {
         return true;
       }
     });
