@@ -1,0 +1,13 @@
+.error-indicator {
+  text-align: center;
+  width: 100%;
+}
+
+.error-indicator-title h1 {
+  color: tomato;
+  text-align: center;
+}
+
+.error-indicator-text h3 {
+  text-align: center;
+}
